@@ -40,5 +40,5 @@ def parse_room(venue: str, res_list: List[Reservation]) -> str:
 
 def _conv_res_list(res_list: List[Reservation], show_poc: bool) -> str:
     if show_poc:
-        return "".join(f"{r} by {r.tele_handle}\n" for r in res_list)
-    return "".join(f"{r}\n" for r in res_list)
+        return "".join(f"{i}. {r} by {r.tele_handle}\n" for i, r in enumerate(res_list, start=1))
+    return "".join(f"{i}. {r}\n" for i, r in enumerate(res_list, start=1))
