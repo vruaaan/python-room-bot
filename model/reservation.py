@@ -83,13 +83,14 @@ class Reservation:
 
     def cancel_string(self) -> str:
         return (
-            f"Booking for {self.venue} on {self.date_start} "
+            f"Booking for {self.venue} on {self.date_start.strftime('%d-%m-%Y')} "
             f"({self.time_start.strftime('%H:%M')} - {self.time_end.strftime('%H:%M')}) cancelled"
         )
-
     def __str__(self) -> str:
         ts = self.time_start.strftime("%H:%M")
         te = self.time_end.strftime("%H:%M")
+        ds = self.date_start.strftime("%d-%m-%Y")
+        de = self.date_end.strftime("%d-%m-%Y")
         if self.date_start == self.date_end:
-            return f"{self.venue} booked on {self.date_start}: {ts} - {te}"
-        return f"{self.venue} booked {self.date_start} {ts} to {self.date_end} {te}"
+            return f"{self.venue} booked on {ds}: {ts} - {te}"
+        return f"{self.venue} booked {ds} {ts} to {de} {te}"
