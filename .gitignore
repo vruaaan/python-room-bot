@@ -1,0 +1,23 @@
+# credentials — never commit these
+.env
+firebaseaccount.json
+
+# config for venues
+venues.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
